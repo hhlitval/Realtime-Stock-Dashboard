@@ -1,5 +1,11 @@
 import json
+import os
 import yfinance as yf
+
+ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
+
+def get_path(*parts):
+    return os.path.join(ROOT_DIR, *parts)
 
 def load_json(path):
     with open(path, "r") as f:
@@ -23,6 +29,6 @@ def get_stock_price(symbol):
 def build_message(symbol, price, timestamp):
     return {
         "symbol": symbol,
-        "price": price,
+        "price": round(price, 2),
         "timestamp": timestamp
     }

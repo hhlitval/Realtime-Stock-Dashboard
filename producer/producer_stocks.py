@@ -1,26 +1,22 @@
 import json
 import time
 from kafka import KafkaProducer
-from utils import load_json, get_stock_price, build_message
+from utils import *
 from datetime import datetime, timezone
 
-# 1. Konfigurationen laden
-config = load_json("../config/kafka_config.json")
-symbols = load_json("../config/symbols.json")["symbols"]
+config = load_json(get_path("config", "kafka_config.json"))
+symbols = load_json(get_path("config", "symbols.json"))["symbols"]
 
-# 2. Producer initialisieren
 producer = KafkaProducer(
     bootstrap_servers=config["bootstrap_servers"],
     value_serializer=lambda v: json.dumps(v).encode("utf-8")
 )
 
-# symbol = "MSFT"
 topic = config["topic_name"]
 interval = config["interval_seconds"]
 
 print(f"Starte Streaming für die Aktien...")
 
-# 3. Endlosschleife für Daten streamen
 while True:
     timestamp = datetime.now(timezone.utc).isoformat()
 
