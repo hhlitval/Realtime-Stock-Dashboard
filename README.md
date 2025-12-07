@@ -1,4 +1,4 @@
-# Real-Time Stock Dashboard with Apache Kafka & Streamlit (DE)
+# Real-Time Stock Dashboard with Apache Kafka & Streamlit
 
 A real-time stock dashboard built with Apache Kafka, Streamlit, and Yahoo Finance. The dashboard displays live stock prices, metrics with deltas, and falls back to historical data when the stock market is closed.
 
@@ -44,7 +44,7 @@ When the market is closed (weekends, holidays, after-hours):
 
 ### UI Language Note
 
-- UI is in German language. The code and documentation are written in English.
+- The UI text inside the Streamlit dashboard is in German. The codebase and documentation remain in English.
 
 ## How to Run
 

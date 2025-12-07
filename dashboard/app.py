@@ -116,7 +116,7 @@ st.markdown(f"""
 <footer class="footer">
     <h4>
         Created by
-        <a href="https://www.alexlitvin.com" target="_blank">Alex Litvin</a> © {datetime.now().year}
+        <a href="https://github.com/hhlitval" target="_blank">Alex Litvin</a> &copy; {datetime.now().year}
     </h4>
 </footer>
 """, 
