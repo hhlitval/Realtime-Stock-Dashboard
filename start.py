@@ -38,10 +38,10 @@ def stop_kafka_services():
         consumer_proc.terminate()
         consumer_proc = None
 
-    # if docker_started:
-    #     print("Stopping Docker Compose")
-    #     subprocess.Popen(["docker-compose", "down"]).wait()
-    #     docker_started = False
+    if docker_started:
+        print("Stopping Docker Compose")
+        subprocess.Popen(["docker-compose", "down"]).wait()
+        docker_started = False
 
 
 def main():

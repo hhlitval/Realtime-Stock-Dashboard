@@ -75,3 +75,4 @@ def get_previous_close(symbol):
             return None
     except Exception:
         return None
+
